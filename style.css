@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.container-grid {
+    position: relative;
+    display: grid;
+}
+
+.container-grid::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: var(--color-light-black);
+    bottom: 0;
+}
+
+.container {
+    padding-left: var(--container-side-padding);
+    padding-right: var(--container-side-padding);
+    margin: auto 0;
+}
+
+h1,
+h2,
+p,
+a,
+label,
+input {
+    font-family: var(--font-family-primary);
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+h1 {
+    font-size: var(--font-size40);
+    font-weight: var(--font-weight500);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: var(--font-size30);
+    font-weight: var(--font-weight500);
+    text-transform: capitalize;
+}
+
+p {
+    font-size: var(--font-size18);
+    font-weight: var(--font-weight400);
+    line-height: var(--line-height40);
+    letter-spacing: 1px;
+    padding: var(--text-block-spacing);
+}
+
+a,
+input[value="send message"] {
+    font-size: var(--font-size16);
+    font-weight: var(--font-weight500);
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+input[value="send message"] {
+    margin: 30px auto 0;
+}
+
+button,
+.btn-container input {
+    width: fit-content;
+    outline: none;
+    background: transparent;
+    border: 1px solid var(--button-color);
+    border-radius: 150px;
+    padding: var(--button-padding);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button:hover,
+.btn-container input:hover {
+    border: 1px solid var(--button-color-secondary);
+}
+
+button:hover a,
+.btn-container:hover input[value="send message"] {
+    color: var(--text-color-primary-accent);
+}
+
+.img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+input,
+label {
+    display: block;
+}
+
+input {
+    box-sizing: border-box;
+}
+
+label {
+    color: var(--text-color-primary);
+    text-align: center;
+    text-transform: capitalize;
+    padding: var(--text-title-spacing);
+}
+
+textarea {
+    height: 200px;
+    width: 100%;
+    resize: none;
+}
+
+input, 
+textarea {
+    line-height: var(--line-height40);
+    box-sizing: border-box;
+    outline: none;
+    background: transparent;
+    border: 1px solid var(--color-light-black);
+    border-radius: 5px;
+    padding: 0 20px;
+}
+
+input:focus,
+textarea:focus {
+    border: 2px solid var(--button-color-secondary);
+}
+
+input:focus ~ label,
+textarea:focus ~ label {
+    color: var(--text-color-primary-accent);
+}
+
+.btn-container input {
+    padding: 0 30px;
+}
+
+
+/* ***************************************************************** */
+
+body {
+    background: var(--color-white);
+}
+
+#header-container .container-grid {
+    grid-template-rows: 800px;
+    grid-template-columns: 50% 50%;
+}
+
+#header-container .img-container img {
+    object-position: right;    
+}
+
+#training-container .container-grid{
+    grid-template-rows: 600px;
+    grid-template-columns: 30% 70%;
+}
+
+#competition-container .container-grid {
+    grid-template-rows: 600px;
+    grid-template-columns: 70% 30%;
+}
+
+#form-container {
+    position: relative;
+}
+
+#form-container::after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: var(--color-light-black);
+    bottom: 10px;
+}
+
+#form-container .container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#form-container .container-grid {
+    grid-template-areas: 
+    "title title"
+    "name mail"
+    "text text"
+    "button button";
+    gap: 20px;
+    padding: 0 300px;;
+}
+
+#form-container .container-grid::after {
+    background: transparent;
+}
+
+#form-container h2 {
+    grid-area: title;
+    text-align: center;
+}
+
+#form-container .input-container{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#form-container form .name {
+    grid-area: name;
+}
+
+#form-container form .mail {
+    grid-area: mail;
+}
+
+#form-container form .message {
+    grid-area: text;
+}
+
+#form-container .btn-container {
+    width: 100%;
+    grid-area: button;
+}
+
+#footer-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#footer-container .reseaux-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 300px;
+}
+
+#footer-container .reseaux-container a {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    color: var(--text-color-primary);
+    border: 1px solid var(--color-light-black);
+    border-radius: 50%;
+    padding: 20px;
+    transition: var(--transition);
+}
+
+#footer-container .reseaux-container a:hover {
+    color: var(--button-color-secondary);
+    border: 1px solid var(--button-color-secondary);
+    border-radius: 50%;
+}
+
+#footer-container .reseaux-container i {
+    position: absolute;
+    font-size: var(--font-size18);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* ***MEDIA QUERRIES*** */
+
+@media screen and (max-width: 1250px) {
+
+    #training-container .container-grid {
+        grid-template-columns: 40% 60%;
+    }
+
+    #competition-container .container-grid {
+        grid-template-columns: 60% 40%;
+    }
+
+    #form-container .container-grid,
+    #footer-container .reseaux-container {
+        padding: 0 150px;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .container-grid:not(#form-container .container-grid) {
+        grid-template-rows: 2fr;
+        grid-template-columns: 1fr;
+    }
+
+    .texte-container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .img-container:not(#header-container .img-container) {
+        display: none;
+    }
+
+    #form-container .container-grid,
+    #footer-container .reseaux-container {
+        padding: 0;
+    }
+}
+
+
+@media screen and (max-width: 570px) {
+
+    .container {
+        padding-left: var(--container-side-padding-responsive);
+        padding-right: var(--container-side-padding-responsive);
+    }
+
+    p {
+        font-size: var(--font-size16);
+    }
+
+    #form-container .container-grid {
+        grid-template-areas: 
+        "title title"
+        "name name"
+        "mail mail"
+        "text text"
+        "button button";
+    }
+
+    #footer-container .reseaux-container a {
+        height: 30px;
+        width: 30px;
+        padding: 10px;
+    }
+
+    #footer-container .reseaux-container i {
+        font-size: var(--font-size14);
+    }
+}
+
+
+

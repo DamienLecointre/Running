@@ -1,0 +1,48 @@
+:root{
+
+    /* ***GENARAL SETUP*** */
+
+    --container: calc(100% - 150px);
+    --container-responsive: calc(100% - 80px);
+    --container-side-padding: calc(50% - var(--container) /2);
+    --container-side-padding-responsive: calc(50% - var(--container-responsive) /2);
+
+    --color-light-black: #b1b1b1;
+    --color-black: #272727;
+    --color-white: #e7e7e7;
+
+    --transition: 0.4s ease-in-out;
+
+    /* ***TEXT SETUP*** */
+
+    --font-family-primary: Montserrat, sans-serif;
+
+    --font-size14: 14px;
+    --font-size16: 16px;
+    --font-size18: 18px;
+    --font-size30: 30px;
+    --font-size40: 40px;
+
+    --font-weight400: 400;
+    --font-weight500: 500;
+    --font-weight600: 600;
+
+    --line-height40: 40px;
+
+    --text-color-primary: #272727;
+    --text-color-primary-accent: #1bbacc;
+
+    --text-block-spacing: 40px 0 30px;
+    --text-title-spacing: 20px 0;
+    
+
+    /* ***BUTTON SETUP*** */
+
+    --button-color: #b1b1b1;
+    --button-color-secondary: #1bbacc;
+
+    --button-padding: 10px 30px;
+    
+
+
+}
